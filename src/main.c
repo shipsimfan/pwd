@@ -6,10 +6,12 @@
 char buffer[BUFFER_LENGTH];
 
 int main() {
-    if (get_current_working_directory(buffer, BUFFER_LENGTH) != 0xFFFFFFFFFFFFFFFF) {
+    int64_t status = get_current_working_directory(buffer, BUFFER_LENGTH);
+
+    if (status >= 0)
         printf("%s\n", buffer);
-    } else {
-        printf("Error while getting present working directory\n");
+    else {
+        printf("Error while getting present working directory: %li\n", status);
         return 1;
     }
 }
