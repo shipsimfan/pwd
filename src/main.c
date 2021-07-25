@@ -1,5 +1,6 @@
 #include <los.h>
 #include <stdio.h>
+#include <string.h>
 
 #define BUFFER_LENGTH 4096
 
@@ -11,7 +12,7 @@ int main() {
     if (status >= 0)
         printf("%s\n", buffer);
     else {
-        printf("Error while getting present working directory: %li\n", status);
+        printf("Error while getting present working directory: %s\n", strerror(status));
         return 1;
     }
 }
