@@ -7,7 +7,7 @@
 char buffer[BUFFER_LENGTH];
 
 int main() {
-    int64_t status = get_current_working_directory(buffer, BUFFER_LENGTH);
+    isize status = get_current_working_directory(buffer, BUFFER_LENGTH);
 
     if (status >= 0)
         printf("%s\n", buffer);
